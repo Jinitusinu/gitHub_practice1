@@ -10,22 +10,13 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    steps:       
-            - name: Setup Java Development Kits built by Oracle
-  # You may pin to the exact commit or the version.
-  # uses: oracle-actions/setup-java@8fb9d7717810ccde9f8d4bef1e6f43d180f506b5
-  uses: oracle-actions/setup-java@v1.4.1
-  with:
-    # Site to download JDK from: `oracle.com` or `jdk.java.net`
-    website: oracle.com 
-    # Feature release number or project name, defaults to `24`
-    release: 24
-    # Additional version information, defaults to `latest`
-    version: latest
-    # Install the downloaded JDK archive file by running actions/setup-java, defaults to `true`
-    install: # default is true
-    # Controls which value is passed as `java-version` to actions/setup-java, defaults to `PARSE_URI` if `release` starts with a digit, else it defaults to `HASH_URI`
-    install-as-version: # optional
-    # URI of JDK archive file to download
-    uri: # optional
-          
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Setup Java Development Kits built by Oracle
+        uses: oracle-actions/setup-java@v1.4.1
+        with:
+          website: oracle.com
+          release: 24
+          version: latest
