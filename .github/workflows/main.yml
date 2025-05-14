@@ -4,11 +4,11 @@
   uses: oracle-actions/setup-java@v1.4.1
   with:
     # Site to download JDK from: `oracle.com` or `jdk.java.net`
-    website: # default is oracle.com
+    website: oracle.com 
     # Feature release number or project name, defaults to `24`
-    release: # default is 24
+    release: 24
     # Additional version information, defaults to `latest`
-    version: # default is latest
+    version: latest
     # Install the downloaded JDK archive file by running actions/setup-java, defaults to `true`
     install: # default is true
     # Controls which value is passed as `java-version` to actions/setup-java, defaults to `PARSE_URI` if `release` starts with a digit, else it defaults to `HASH_URI`
