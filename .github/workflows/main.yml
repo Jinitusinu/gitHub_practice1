@@ -10,10 +10,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v3      
-            
+    steps:       
             - name: Setup Java Development Kits built by Oracle
   # You may pin to the exact commit or the version.
   # uses: oracle-actions/setup-java@8fb9d7717810ccde9f8d4bef1e6f43d180f506b5
