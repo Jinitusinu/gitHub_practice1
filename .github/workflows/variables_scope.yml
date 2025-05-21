@@ -1,0 +1,33 @@
+name: Variable Scope Demo
+
+# Step 1: Define Workflow-Level Variables
+env:
+  MY_WORKFLOW_VARIABLE: "This is a workflow-level variable"
+
+on:
+  push:
+    branches:
+      - main  # or any branch you want
+
+jobs:
+  demo-job:
+    name: Demo Job for Variable Scope
+
+    # Step 2: Define Job-Level Variables
+    env:
+      MY_JOB_VARIABLE: "This is a job-level variable"
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Step 3: Define Step-Level Variable
+      - name: Print all variable scopes
+        env:
+          MY_STEP_VARIABLE: "This is a step-level variable"
+        run: |
+          echo "Workflow-level variable: $MY_WORKFLOW_VARIABLE"
+          echo "Job-level variable: $MY_JOB_VARIABLE"
+          echo "Step-level variable: $MY_STEP_VARIABLE"
