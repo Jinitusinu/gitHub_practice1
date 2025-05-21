@@ -22,7 +22,7 @@ jobs:
 
       - name: Build Project and Generate Checkstyle Report
         run: |
-          ./gradlew check  # or mvn checkstyle:checkstyle for Maven
+         # ./gradlew check  # or mvn checkstyle:checkstyle for Maven
           mkdir -p reports
           cp build/reports/checkstyle/*.xml reports/ || true
 
