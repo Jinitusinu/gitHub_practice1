@@ -31,3 +31,4 @@ jobs:
           echo "Workflow-level variable: $MY_WORKFLOW_VARIABLE"
           echo "Job-level variable: $MY_JOB_VARIABLE"
           echo "Step-level variable: $MY_STEP_VARIABLE"
+
