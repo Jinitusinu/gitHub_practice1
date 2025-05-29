@@ -1,0 +1,12 @@
+jobs:
+  weather-api:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Pull Docker image and clean environment
+        run: |
+          docker run --rm ubuntu:latest bash -c "
+            apt-get update && apt-get install -y curl
+            curl -v -X GET 'https://api.openweathermap.org/data/2.5/weather?q=London&appid=d6ee344647e407aa55ec488f464ac44b'"
