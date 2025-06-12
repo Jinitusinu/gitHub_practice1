@@ -1,0 +1,16 @@
+name: Windows Self-Hosted CI
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: [self-hosted, windows, x64]
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Show Windows details
+        shell: powershell
+        run: |
+          Write-Host "Running on self-hosted Windows runner"
+          Get-ComputerInfo | Select CsName, OsName, OsVersion
