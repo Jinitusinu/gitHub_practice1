@@ -1,12 +1,38 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                             http://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
   <modelVersion>4.0.0</modelVersion>
+
   <groupId>io.github.jinitusinu</groupId>
   <artifactId>util-library</artifactId>
   <version>1.0.0</version>
   <packaging>jar</packaging>
+
+  <name>util-library</name>
+  <description>A simple utility library</description>
+  <url>https://github.com/jinitusinu/util-library</url>
+
+  <licenses>
+    <license>
+      <name>MIT License</name>
+      <url>https://opensource.org/licenses/MIT</url>
+    </license>
+  </licenses>
+
+  <developers>
+    <developer>
+      <id>jinitusinu</id>
+      <name>Your Name</name>
+      <email>your@email.com</email>
+    </developer>
+  </developers>
+
+  <scm>
+    <url>https://github.com/jinitusinu/util-library</url>
+    <connection>scm:git:git://github.com/jinitusinu/util-library.git</connection>
+    <developerConnection>scm:git:ssh://github.com:jinitusinu/util-library.git</developerConnection>
+  </scm>
 
   <distributionManagement>
     <repository>
@@ -14,4 +40,5 @@
       <url>https://maven.pkg.github.com/jinitusinu/util-library</url>
     </repository>
   </distributionManagement>
+
 </project>
