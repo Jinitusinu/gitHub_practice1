@@ -3,6 +3,7 @@ name: Publish Java Package
 on:
   release:
     types: [created]
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -21,7 +22,18 @@ jobs:
           java-version: '11'
           distribution: 'temurin'
 
+      - name: Configure Maven for GitHub Packages
+        run: |
+          mkdir -p ~/.m2
+          echo "<settings>
+            <servers>
+              <server>
+                <id>github</id>
+                <username>${{ github.actor }}</username>
+                <password>${{ secrets.GH_PACKAGES_TOKEN }}</password>
+              </server>
+            </servers>
+          </settings>" > ~/.m2/settings.xml
+
       - name: Build and publish to GitHub Packages
         run: mvn --batch-mode deploy
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
