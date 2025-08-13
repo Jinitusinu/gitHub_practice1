@@ -22,7 +22,7 @@ jobs:
           java-version: '11'
           distribution: 'temurin'
 
-      - name: Configure Maven for GitHub Packages
+      - name: Configure Maven settings.xml
         run: |
           mkdir -p ~/.m2
           echo "<settings>
@@ -35,5 +35,5 @@ jobs:
             </servers>
           </settings>" > ~/.m2/settings.xml
 
-      - name: Build and publish to GitHub Packages
+      - name: Build and deploy to GitHub Packages
         run: mvn --batch-mode deploy
